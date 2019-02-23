@@ -1,6 +1,5 @@
-require "rugby/version"
+# environment
 
-module Rugby
-  class Error < StandardError; end
-  # Your code goes here...
-end
+require "rugby/version"
+require "rugby/cli"
+
