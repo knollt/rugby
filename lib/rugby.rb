@@ -1,5 +1,5 @@
 # environment
 
-require "rugby/version"
-require "rugby/cli"
+require_relative "rugby/version"
+require_relative "rugby/cli"
 

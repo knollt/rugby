@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby   
 
-require ".lib/rugby"
+require_relative "../lib/rugby"
 
 
 # Creates a new instance of CLI controller, calls the call method on it, which launches the user experience/interface.
