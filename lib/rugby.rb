@@ -1,5 +1,9 @@
 # environment
 
+require "pry"
+require "nokogiri"
+require "open-uri"
+
 require_relative "rugby/version"
 require_relative "rugby/cli"
 require_relative "rugby/player"

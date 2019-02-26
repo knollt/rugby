@@ -7,5 +7,6 @@ class Rugby::Scrape
   
   def self.scrape_teams
     puts "in scrape"
+    
   end
 end  
