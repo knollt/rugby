@@ -24,7 +24,8 @@ class Rugby::CLI
         case input
           when "team"
           #pull team object from scraped team webpage 
-            puts "in team"
+          Rugby::Scrape.scrape_teams
+            # puts "in team"
           when "list"
           #list of teams method 
             puts "in list"

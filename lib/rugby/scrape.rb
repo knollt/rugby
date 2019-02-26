@@ -6,7 +6,8 @@ class Rugby::Scrape
   end 
   
   def self.scrape_teams
-    puts "in scrape"
-    
+    # puts "in scrape"
+    league_webpage = Nokogiri::HTML(open("https://www.rugby.com.au/competitions/super-rugby"))
+    binding.pry
   end
 end  
