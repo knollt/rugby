@@ -23,13 +23,16 @@ class Rugby::CLI
       input = gets.strip.downcase
         case input
           when "team"
-          #
+          #pull team object from scraped team webpage 
+            puts "in team"
           when "list"
-          #list of teams method  
+          #list of teams method 
+            puts "in list"
           when "exit"
             goodbye
           else
             puts "Invalid entry"
+            menu
           end
     end         
   end   
