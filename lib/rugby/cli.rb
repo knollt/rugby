@@ -14,6 +14,12 @@ class Rugby::CLI
     puts "Below is a list of teams:"
     puts " "
     # list of teams method 
+    Rugby::Team.all.each.with_index(1) do |team, i|
+      print "#{i}. #{team.name}"
+      puts " "
+      print "#{team.url}"
+      puts " "
+    end
   end   
   
   def menu

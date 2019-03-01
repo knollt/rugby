@@ -5,9 +5,10 @@ class Rugby::Team
   @@all = []
   
   #initialize a team instance with properties and adds to @@all array 
-  def initialize (name, url)
-    @name = name
+  def initialize (url, name)
     @url = url
+    @name = name
+    
     @@all << self
   end 
   
