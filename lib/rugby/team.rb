@@ -6,7 +6,7 @@ class Rugby::Team
   
   #initialize a team instance with properties and adds to @@all array 
   def initialize (url, name)
-    @url = url
+    @url = "https://www.rugby.com.au" + url
     @name = name
     
     @@all << self
