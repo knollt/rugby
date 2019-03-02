@@ -1,5 +1,7 @@
 class Rugby::Player
   
+# scrape roster for each team 
+
   def self.roster_lions
     puts "in lions scrape"
   end   

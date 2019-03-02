@@ -16,6 +16,7 @@ class Rugby::CLI
     list_teams
   end   
   
+  # takes team chosen and fetches player roster
   def menu
     input = nil 
     while input != "exit"
@@ -38,6 +39,7 @@ class Rugby::CLI
     end         
   end   
   
+  # print continue or exit message
   def submenu
     inputted = nil
     puts " "
@@ -54,13 +56,14 @@ class Rugby::CLI
     end   
   end 
   
+  # exit message
   def goodbye
     puts " "
     puts "Thank you!  Have a nice day and come back soon."
     puts " "
   end   
   
-  
+  #display list of teams
   def list_teams
     # list of teams method 
     Rugby::Team.all.each.with_index(1) do |team, i|

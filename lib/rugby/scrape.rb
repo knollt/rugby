@@ -5,6 +5,7 @@ class Rugby::Scrape
     self.scrape_teams
   end 
   
+  # scrape website for list of teams and url 
   def self.scrape_teams
     # puts "in scrape"
     doc = Nokogiri::HTML(open("https://www.rugby.com.au/competitions/super-rugby"))
