@@ -24,7 +24,7 @@ class Rugby::CLI
         case input
           when "lions"
             #pull team object from scraped team webpage 
-            team = Rugby::Scrape.scrape_roster
+            team = Rugby::Player.roster_lions
             submenu
           when "list"
           #list of teams method 

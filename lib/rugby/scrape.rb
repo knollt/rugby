@@ -18,9 +18,6 @@ class Rugby::Scrape
     end   
   end
   
-  def self.scrape_roster
-    puts "in roster scrape"
-  end   
   
 end  
 
