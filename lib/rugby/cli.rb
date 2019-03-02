@@ -13,13 +13,7 @@ class Rugby::CLI
     puts " "
     puts "Below is a list of teams:"
     puts " "
-    # list of teams method 
-    Rugby::Team.all.each.with_index(1) do |team, i|
-      print "#{i}. #{team.name}"
-      puts " "
-      print "#{team.url}"
-      puts " "
-    end
+    list_teams
   end   
   
   def menu
@@ -28,11 +22,10 @@ class Rugby::CLI
       puts "What team would you like to view their players and positions? \nPlease type the team name and hit enter.  \nIf you wish to view the list of teams again, please type list and hit enter.  \nIf not interested, please type exit and hit enter."
       input = gets.strip.downcase
         case input
-          when "team"
-          #pull team object from scraped team webpage 
-          team = Rugby::Scrape.scrape_teams
-          puts team[1]
-            # puts "in team"
+          when "lions"
+            #pull team object from scraped team webpage 
+            team = Rugby::Scrape.scrape_roster
+            submenu
           when "list"
           #list of teams method 
             puts "in list"
@@ -46,13 +39,36 @@ class Rugby::CLI
   end   
   
   def submenu
-    
+    inputted = nil
+    puts " "
+    puts "Would you like to select a diffent team? Enter Y or N."
+    puts " "
+    inputted = gets.strip.downcase
+    if inputted == "y"
+      menu
+    elsif inputted == "n"  
+      goodbye
+    else 
+      puts "I don't understand your answer."
+      submenu
+    end   
   end 
   
   def goodbye
     puts " "
     puts "Thank you!  Have a nice day and come back soon."
     puts " "
+  end   
+  
+  
+  def list_teams
+    # list of teams method 
+    Rugby::Team.all.each.with_index(1) do |team, i|
+      print "#{i}. #{team.name}"
+      puts " "
+      print "#{team.url}"
+      puts " "
+    end   
   end   
   
 end   

@@ -16,9 +16,12 @@ class Rugby::Scrape
        Rugby::Team.new(z.attributes['href'].value, z.children[1].children[3].children[1].children[0].text)
       # binding.pry 
     end   
-    
- 
   end
+  
+  def self.scrape_roster
+    puts "in roster scrape"
+  end   
+  
 end  
 
 
