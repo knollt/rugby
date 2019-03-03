@@ -27,6 +27,9 @@ class Rugby::CLI
             #pull team object from scraped team webpage 
             team = Rugby::Player.roster_lions
             submenu
+          when "highlanders"
+            team = Rugby::Player.roster_highlanders
+            submenu
           when "list"
           #list of teams method 
             puts "in list"
