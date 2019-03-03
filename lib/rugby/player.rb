@@ -3,7 +3,11 @@ class Rugby::Player
 # scrape roster for each team 
 
   def self.roster_lions
-    puts "in lions scrape"
+    # puts "in lions scrape"
+    doc_lion = Nokogiri::HTML(open("https://www.rugby.com.au/teams/lions"))
+    binding.pry
+    # player_name = doc_lion.search("div.meta-player").children[3].children[0].text
+    # player_position = doc_lion.search("div.meta-player").children[5].children.text
   end   
   
   def self.roster_highlanders
