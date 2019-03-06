@@ -77,6 +77,22 @@ class Rugby::CLI
     end   
   end   
   
+  
+  def choose_team
+    puts "\nChoose a number of the team you would like to see the teams roster"
+    get input = gets.strip.to_i 
+    max_value = Rugby::Team.all.length
+    if input.between?(1..max_value)
+      # valid input
+    else 
+      puts "Invalid number."
+      choose_team
+    end   
+  end
+  
+  def display_team
+    
+  end  
 end   
 
 
