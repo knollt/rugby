@@ -68,7 +68,9 @@ class Rugby::CLI
   end
   
   def display_team(team)
-    puts "lets cheer team A"
+    # puts "lets cheer team A"
+    binding.pry
+    Rugby::Player
   end  
   
   # print continue or exit message
