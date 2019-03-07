@@ -67,10 +67,11 @@ class Rugby::CLI
     end   
   end
   
+  # guides to team url page to scrape player info
   def display_team(team)
     # puts "lets cheer team A"
-    binding.pry
-    Rugby::Player
+    # binding.pry
+    Rugby::Player.team_info(team)
   end  
   
   # print continue or exit message
