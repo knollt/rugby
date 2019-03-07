@@ -67,8 +67,6 @@ class Rugby::CLI
   
   # guides to team url page to scrape player info
   def display_team(team) #passes team obect
-    # puts "lets cheer team A"
-    # binding.pry
     Rugby::Player.team_info(team)
   end  
   

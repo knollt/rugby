@@ -11,9 +11,13 @@ class Rugby::Player
     team_page = Nokogiri::HTML(open(team.url))
     # binding.pry
     player = team_page.search("div.meta-player")
-    
-    player_name = team_page.search("div.meta-player").children[3].children[0].text
-    player_position = team_page.search("div.meta-player").children[5].children.text
+    player.each do |info|
+      # binding.pry
+      team.player << info.children[3].children[0].text
+    # player = info.children[3].children[0].text
+    # position = info.children[5].children.text
+      binding.pry
+    end
   end 
   
   
