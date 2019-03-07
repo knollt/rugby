@@ -21,12 +21,10 @@ class Rugby::CLI
       input = gets.strip.downcase
       case input
         when "team"
-            # puts "in team"
           list_teams
           choose_team
         when "exit"
-          puts "goodbye"
-            # goodbye
+            goodbye
         else
           puts "Sorry, I didn't understand that input."
           menu
@@ -68,7 +66,7 @@ class Rugby::CLI
   end
   
   # guides to team url page to scrape player info
-  def display_team(team)
+  def display_team(team) #passes team obect
     # puts "lets cheer team A"
     # binding.pry
     Rugby::Player.team_info(team)
