@@ -4,27 +4,7 @@ class Rugby::Player
   
   @@info = [] #may need?
   
-# scrape roster for each team 
 
- 
-  def self.team_info(team)
-    # puts "in player team scrape"
-    team_page = Nokogiri::HTML(open(team.url))
-    player = team_page.search("div.meta-player")
-    player.each do |player|
-      #creating an instance
-      player_info = Rugby::Player.new 
-    
-      # assigning player attributes    
-      player_info.player = player.children[3].children[0].text
-      player_info.position = player.children[5].children.text
-    
-      
-      # associate player and team
-      team.player << player_info
-    end
-  end 
-  
   
   
   # def self.roster_lions

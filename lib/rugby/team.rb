@@ -1,7 +1,7 @@
 class Rugby::Team 
   # create reader/writer methods/attributes or properties for each climbing city 
   attr_accessor :name, :url 
-  attr_reader :player, :position #has many relationships
+  attr_reader :player, :position; :team #has many relationships
   
   @@all = []
   
