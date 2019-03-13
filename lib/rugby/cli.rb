@@ -67,7 +67,7 @@ class Rugby::CLI
   
   # guides to team url page to scrape player info
   def display_team(team) #passes team obect
-    Rugby::Player.team_info(team)
+    Rugby::Scrape.team_info(team)
   end  
   
   # print continue or exit message

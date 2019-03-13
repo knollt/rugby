@@ -27,7 +27,7 @@ class Rugby::Scrape
       player_info.position = player.children[5].children.text
     
       # associate player and team
-      team.player << player_info
+      team.add_player(player_info)
     end
   end 
     

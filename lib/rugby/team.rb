@@ -1,7 +1,7 @@
 class Rugby::Team 
   # create reader/writer methods/attributes or properties for each climbing city 
   attr_accessor :name, :url 
-  attr_reader :player, :position; :team #has many relationships
+  attr_reader :player, :position #has many relationships
   
   @@all = []
   
@@ -10,7 +10,6 @@ class Rugby::Team
     @url = "https://www.rugby.com.au" + url
     @name = name
     @player = []
-    
     @@all << self #saving and remember object
   end 
   
@@ -19,6 +18,9 @@ class Rugby::Team
     @@all
   end 
   
-  
-  
+  # associating team about player
+  def add_player (player_info)
+    self.player << player_info
+    player_info.team = self
+  end 
 end   
