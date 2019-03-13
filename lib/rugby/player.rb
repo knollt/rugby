@@ -1,5 +1,5 @@
 class Rugby::Player
-  attr_accessor :player, :position 
+  attr_accessor :player, :position, :team 
   
   
   @@info = [] #may need?

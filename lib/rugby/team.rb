@@ -20,4 +20,5 @@ class Rugby::Team
   end 
   
   
+  
 end   
