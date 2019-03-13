@@ -6,17 +6,22 @@ class Rugby::Player
   
 # scrape roster for each team 
 
+ 
   def self.team_info(team)
     # puts "in player team scrape"
     team_page = Nokogiri::HTML(open(team.url))
-    # binding.pry
     player = team_page.search("div.meta-player")
-    player.each do |info|
-      # binding.pry
-      team.player << info.children[3].children[0].text
-    # player = info.children[3].children[0].text
-    # position = info.children[5].children.text
-      binding.pry
+    player.each do |player|
+      #creating an instance
+      player_info = Rugby::Player.new 
+    
+      # assigning player attributes    
+      player_info.player = player.children[3].children[0].text
+      player_info.position = player.children[5].children.text
+    
+      
+      # associate player and team
+      team.player << player_info
     end
   end 
   
