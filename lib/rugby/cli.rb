@@ -53,7 +53,7 @@ class Rugby::CLI
   
   
   def choose_team
-    puts "\nChoose a number of the team you would like to see the teams roster"
+    puts "\nChoose the number of the team you would like to view the teams roster"
     input = gets.strip.to_i 
     max_value = Rugby::Team.all.length
     if input.between?(1,max_value)
@@ -74,6 +74,7 @@ class Rugby::CLI
     # print player name and position
       puts "#{i}. #{p.player} - #{p.position}"
     end
+    submenu
   end  
   
   # print continue or exit message
@@ -84,7 +85,8 @@ class Rugby::CLI
     puts " "
     inputted = gets.strip.downcase
     if inputted == "y"
-      menu
+      list_teams
+      choose_team
     elsif inputted == "n"  
       goodbye
     else 
