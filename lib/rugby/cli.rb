@@ -44,10 +44,8 @@ class Rugby::CLI
   def list_teams
     # list of teams method 
     Rugby::Team.all.each.with_index(1) do |team, i|
-      print "#{i}. #{team.name}"
+      print "#{i}. #{team.name}".colorize(:yellow)
       puts " "
-      # print "#{team.url}"
-      # puts " "
     end   
   end   
   
@@ -72,7 +70,7 @@ class Rugby::CLI
     
     team.player.each.with_index(1) do |p, i|   #represents an array of player objects
     # print player name and position
-      puts "#{i}. #{p.player} - #{p.position}"
+      puts "#{i}. #{p.player} - #{p.position}".colorize(:green)
     end
     submenu
   end  
@@ -98,11 +96,5 @@ end
 
 
 
-          # when "lions"
-          #   #pull team object from scraped team webpage 
-          #   team = Rugby::Player.roster_lions
-          #   submenu
-          # when "highlanders"
-          #   team = Rugby::Player.roster_highlanders
-          #   submenu
+   
   
