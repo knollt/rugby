@@ -3,6 +3,7 @@ class Rugby::CLI
   # start new CLI session
   def call 
     Rugby::Scrape.today
+    @counter == 0 
     greeting
   end  
   
@@ -21,6 +22,10 @@ class Rugby::CLI
       input = gets.strip.downcase
       case input
         when "team"
+        if @counter == 0 
+          list_teams
+          counter == 1 
+        end  
           list_teams
           choose_team
         when "exit"
@@ -42,7 +47,6 @@ class Rugby::CLI
   
   #display list of teams
   def list_teams
-    # list of teams method 
     Rugby::Team.all.each.with_index(1) do |team, i|
       print "#{i}. #{team.name}".colorize(:yellow)
       puts " "
