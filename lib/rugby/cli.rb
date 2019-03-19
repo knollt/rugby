@@ -2,7 +2,7 @@ class Rugby::CLI
  
   # start new CLI session
   def call 
-    Rugby::Scrape.today
+    # Rugby::Scrape.today
     @counter == 0 
     greeting
   end  
@@ -11,8 +11,7 @@ class Rugby::CLI
   def greeting
     puts "Welcome rugby fan! \nLets explore one of the top rugby leagues in the world. \nSuper Rugby is comprised of 15 teams from the following counties: \nAustralia (4 teams) \nNew Zealand (5 teams) \nSouth Africa (4 teamss) \nJapan (1 team) \nArgentina (1 team)"
     puts " "
-    # puts "Below is a list of teams:"
-    # puts " "
+    Rugby::Scrape.today
     menu
   end   
   
@@ -22,12 +21,13 @@ class Rugby::CLI
       input = gets.strip.downcase
       case input
         when "team"
-        if @counter == 0 
-          list_teams
-          counter == 1 
-        end  
-          list_teams
-          choose_team
+          @team = "team"  
+          if @counter == 0 
+            scrape_teams
+            @counter == 1 
+          end  
+            list_teams
+            choose_team
         when "exit"
             goodbye
         else
@@ -95,7 +95,11 @@ class Rugby::CLI
       puts "I don't understand your answer."
       submenu
     end   
-  end   
+  end 
+  
+  def scrape_team
+      team =  Rugby::Team.scrape_teams(@team)
+  end
 end   
 
 
