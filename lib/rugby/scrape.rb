@@ -6,7 +6,7 @@ class Rugby::Scrape
   end 
   
   # scrape website for list of teams and url 
-  def self.scrape_teams(team)
+  def self.scrape_teams
     doc = Nokogiri::HTML(open("https://www.rugby.com.au/competitions/super-rugby"))
     doc.search("div.col-xs-12.col-md-4.col-xl-2 a").each do |z|
        Rugby::Team.new(z.attributes['href'].value, z.children[1].children[3].children[1].children[0].text)
