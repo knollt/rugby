@@ -70,11 +70,17 @@ class Rugby::CLI
   # guides to team url page to scrape player info
   def display_team(team) #passes team obect
     Rugby::Scrape.team_info(team)
+    
+    # binding.pry #team = []
+    
     puts "Here are the current #{team.name} player roster:\n"
     
     team.player.each.with_index(1) do |p, i|   #represents an array of player objects
     # print player name and position
       puts "#{i}. #{p.player} - #{p.position}".colorize(:green)
+      
+      binding.pry
+      
     end
     submenu
   end  
