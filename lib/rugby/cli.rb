@@ -5,7 +5,6 @@ class Rugby::CLI
   # start new CLI session
   def call 
     Rugby::Scrape.today
-    # @counter == 0 
     greeting
   end  
   
@@ -68,18 +67,18 @@ class Rugby::CLI
   end
   
   # guides to team url page to scrape player info
-  def display_team(team) #passes team obect
-    Rugby::Scrape.team_info(team)
+  def display_team(team) #passes team object
+    binding.pry 
     
-    # binding.pry #team = []
+    Rugby::Scrape.team_info(team)
     
     puts "Here are the current #{team.name} player roster:\n"
     
-    team.player.each.with_index(1) do |p, i|   #represents an array of player objects
+    team.player.each.with_index(1) do |p, i|  #represents an array of player objects
     # print player name and position
       puts "#{i}. #{p.player} - #{p.position}".colorize(:green)
       
-      binding.pry
+      # binding.pry
       
     end
     submenu
@@ -103,9 +102,6 @@ class Rugby::CLI
     end   
   end 
   
-  # def scrape_team
-  #     team =  Rugby::Team.scrape_teams(@team)
-  # end
 end   
 
 
