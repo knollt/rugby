@@ -1,7 +1,5 @@
 class Rugby::CLI 
-  # attr_reader :counter, :team
-  
- 
+
   # start new CLI session
   def call 
     Rugby::Scrape.today
@@ -12,7 +10,6 @@ class Rugby::CLI
   def greeting
     puts "Welcome rugby fan! \nLets explore one of the top rugby leagues in the world. \nSuper Rugby is comprised of 15 teams from the following counties: \nAustralia (4 teams) \nNew Zealand (5 teams) \nSouth Africa (4 teamss) \nJapan (1 team) \nArgentina (1 team)"
     puts " "
-    # Rugby::Scrape.today
     menu
   end   
   
@@ -22,11 +19,6 @@ class Rugby::CLI
       input = gets.strip.downcase
       case input
         when "team"
-          # @team = "team"  
-          # if @counter == 0 
-          #   scrape_teams
-          #   @counter == 1 
-          # end  
             list_teams
             choose_team
         when "exit"
@@ -68,19 +60,23 @@ class Rugby::CLI
   
   # guides to team url page to scrape player info
   def display_team(team) #passes team object
-    binding.pry 
-    
-    Rugby::Scrape.team_info(team)
-    
-    puts "Here are the current #{team.name} player roster:\n"
-    
-    team.player.each.with_index(1) do |p, i|  #represents an array of player objects
-    # print player name and position
-      puts "#{i}. #{p.player} - #{p.position}".colorize(:green)
+    # binding.pry 
+    if team.player.empty?
+      Rugby::Scrape.team_info(team)
       
-      # binding.pry
+      puts "Here is the current #{team.name} team members:\n"
       
-    end
+      team.player.each.with_index(1) do |p, i|  #represents an array of player objects
+      # print player name and position
+        puts "#{i}. #{p.player} - #{p.position}".colorize(:green)
+        # binding.pry
+      end
+    else
+      team.player.each.with_index(1) do |p, i|  #represents an array of player objects
+      # print player name and position
+        puts "#{i}. #{p.player} - #{p.position}".colorize(:green)
+      end
+    end  
     submenu
   end  
   

@@ -10,7 +10,6 @@ class Rugby::Team
     @url = "https://www.rugby.com.au" + url
     @name = name
     @player = []
-    # @team = team 
     @@all << self #saving and remember object
   end 
   
