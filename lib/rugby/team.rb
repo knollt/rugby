@@ -1,5 +1,5 @@
 class Rugby::Team 
-  # create reader/writer methods/attributes or properties for each climbing city 
+  # create reader/writer methods/attributes or properties for each rugby team and player 
   attr_accessor :name, :url, :team
   attr_reader :player, :position #has many relationships
   
